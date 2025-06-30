@@ -11,7 +11,7 @@ export default function App() {
         <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
         <Suspense fallback={null}>
           <Environment preset="sunset" />
-          <ModelViewer url="/models/250627_Radiozauberer_JazzDance.glb" />
+          <ModelViewer url="/models/Radiozauberer_JazzDance.glb" />
         </Suspense>
         <OrbitControls minDistance={1} maxDistance={10}/>
       </Canvas>
