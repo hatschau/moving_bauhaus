@@ -12,12 +12,12 @@ const models = {
 export default function App() {
   const [selectedModel, setSelectedModel] = useState(models["WalkCircle"])
 
-  // ❗️Clear the GLTF cache before loading new model
+  // clear GLTF cache before loading new model
   useEffect(() => {
     useGLTF.clear(selectedModel)
   }, [selectedModel])
 
-  // Optional: Preload the current model
+  // preload current model
   useGLTF.preload(selectedModel)
 
   return (
@@ -38,7 +38,6 @@ export default function App() {
           <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
           <Suspense fallback={null}>
             <Environment preset="sunset" />
-            {/* key={url} zwingt React zum vollständigen Neumount */}
             <ModelViewer key={selectedModel} url={selectedModel} />
           </Suspense>
           <OrbitControls />

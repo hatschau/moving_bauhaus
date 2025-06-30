@@ -7,7 +7,6 @@ export default function ModelViewer({ url }) {
   const { actions } = useAnimations(animations, scene)
 
   useEffect(() => {
-    // Stoppe alte Animationen beim unmount
     return () => {
       if (actions) {
         Object.values(actions).forEach(action => action.stop())
