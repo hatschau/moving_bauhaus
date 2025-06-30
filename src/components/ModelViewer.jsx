@@ -1,10 +1,19 @@
 import React, { useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-export default function ModelViewer({ url, ...props }) {
+export default function ModelViewer({ url }) {
   const gltf = useGLTF(url)
   const { scene, animations } = gltf
   const { actions } = useAnimations(animations, scene)
+
+  useEffect(() => {
+    // Stoppe alte Animationen beim unmount
+    return () => {
+      if (actions) {
+        Object.values(actions).forEach(action => action.stop())
+      }
+    }
+  }, [url])
 
   useEffect(() => {
     if (actions && animations.length > 0) {
@@ -14,5 +23,5 @@ export default function ModelViewer({ url, ...props }) {
     }
   }, [actions, animations])
 
-  return <primitive object={scene} {...props} />
+  return <primitive object={scene} />
 }
