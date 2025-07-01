@@ -11,6 +11,24 @@ body {
   align-items: center;
 }
 
+.header {
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .dropdown {
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -24,3 +42,34 @@ body {
   border-radius: 8px;
   overflow: hidden;
 }
+
+.video-gallery {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #222;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+}
+
+.video-button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.video-button:hover {
+  background-color: #666;
+}
+

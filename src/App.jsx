@@ -2,6 +2,7 @@ import React, { useState, Suspense, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei'
 import ModelViewer from './components/ModelViewer'
+import VideoPlayer from './components/VideoPlayer'
 
 const models = {
   "WalkCircle": "/models/Radiozauberer_WalkCircle.glb",
@@ -9,8 +10,15 @@ const models = {
   "JazzPose": "/models/Radiozauberer_JazzPose.glb"
 }
 
+const videos = [
+  "/videos/walkCircle.mp4",
+  "/videos/jazzDance.mp4",
+  "/videos/jazzPose.mp4"
+]
+
 export default function App() {
   const [selectedModel, setSelectedModel] = useState(models["WalkCircle"])
+
 
   // clear GLTF cache before loading new model
   useEffect(() => {
@@ -22,6 +30,18 @@ export default function App() {
 
   return (
     <div className="app">
+
+      <header className="header">
+        <h1>Moving Bauhaus</h1>
+      </header>
+
+     
+      <div className="description-container">
+        <p>
+          Dieses Modell zeigt eine animierte Figur mit verschiedenen Bewegungsabläufen. Wähle eine Animation aus dem Dropdown-Menü, um sie zu laden und abzuspielen.
+        </p>
+      </div>
+
       <select
         value={selectedModel}
         onChange={(e) => setSelectedModel(e.target.value)}
@@ -42,6 +62,12 @@ export default function App() {
           </Suspense>
           <OrbitControls />
         </Canvas>
+      </div>
+
+      <div className="video-gallery">
+        {videos.map((url, i) => (
+          <VideoPlayer key={i} url={url} />
+        ))}
       </div>
     </div>
   )
