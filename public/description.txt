@@ -1,1 +1,7 @@
-Hier kommt eine super Beschreibunge yay
+Dieses Projekt ist Teil meiner Bachelorarbeit im Fach Medieninformatik am Institut für Digital Humanities der Universität zu Köln. Es widmet sich der digitalen Modellierung und Animation des Kostüms „Radiozauberer“, entworfen von Bauhaus-Künstler Oskar Schlemmer für das Ballett "Spielzeug" (Dresden, 1928).
+
+Ziel war es, die originale Entwurfszeichnung aus der Theaterwissenschaftlichen Sammlung der Universität zu Köln in ein dreidimensionales, animiertes Modell zu übertragen und damit das Wechselspiel von menschlicher Bewegung und Kostümgestaltung erlebbar zu machen.
+
+Auf dieser Website finden Sie ein interaktives 3D-Modell des Kostüms mit mehreren vordefinierten Bewegungsanimationen, die über ein Dropdown-Menü ausgewählt und abgespielt werden können. Zusätzlich zu jeder Animation ein begleitendes Video, das die Bewegung aus einer festen Kameraperspektive zeigt.
+
+Das Projekt untersucht, wie sich durch digitale Medien neue Zugänge zur Interpretation historischer Bühnenkunst eröffnen – und welche ästhetischen und theoretischen Fragen sich bei der medientransformatorischen Umsetzung ergeben.
