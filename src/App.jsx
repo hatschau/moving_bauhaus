@@ -18,6 +18,17 @@ const videos = [
 
 export default function App() {
   const [selectedModel, setSelectedModel] = useState(models["WalkCircle"])
+  const [description, setDescription] = useState("")
+
+  useEffect(() => {
+    fetch('/description.txt')
+      .then(res => res.text())
+      .then(setDescription)
+      .catch(err => {
+        console.error("Fehler beim Laden der Beschreibung:", err)
+        setDescription("Fehler beim Laden des Beschreibungstextes.")
+      })
+  }, [])
 
 
   // clear GLTF cache before loading new model
@@ -38,7 +49,7 @@ export default function App() {
      
       <div className="description-container">
         <p>
-          Dieses Modell zeigt eine animierte Figur mit verschiedenen Bewegungsabläufen. Wähle eine Animation aus dem Dropdown-Menü, um sie zu laden und abzuspielen.
+          {description}
         </p>
       </div>
 
