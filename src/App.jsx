@@ -80,6 +80,12 @@ export default function App() {
           <VideoPlayer key={i} url={url} />
         ))}
       </div>
+      <div className="download-section">
+  <h2>Animationen als glTF herunterladen</h2>
+  <a href="/downloads/models.zip" download className="download-button">
+    Download .zip
+  </a>
+</div>
     </div>
   )
 }
