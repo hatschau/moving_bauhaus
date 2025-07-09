@@ -41,18 +41,14 @@ export default function App() {
 
   return (
     <div className="app">
-
       <header className="header">
         <h1>Moving Bauhaus</h1>
       </header>
-
-     
       <div className="description-container">
         <p>
           {description}
         </p>
       </div>
-
       <select
         value={selectedModel}
         onChange={(e) => setSelectedModel(e.target.value)}
@@ -62,7 +58,6 @@ export default function App() {
           <option key={path} value={path}>{label}</option>
         ))}
       </select>
-
       <div className="canvas-wrapper">
         <Canvas camera={{ position: [0, 1, 3] }}>
           <ambientLight intensity={0.5} />
@@ -74,18 +69,17 @@ export default function App() {
           <OrbitControls />
         </Canvas>
       </div>
-
       <div className="video-gallery">
         {videos.map((url, i) => (
           <VideoPlayer key={i} url={url} />
         ))}
       </div>
       <div className="download-section">
-  <h2>Animationen als glTF herunterladen</h2>
-  <a href="/downloads/models.zip" download className="download-button">
-    Download .zip
-  </a>
-</div>
+        <h2>Animationen als glTF herunterladen</h2>
+        <a href="/downloads/models.zip" download className="download-button">
+          Download .zip
+        </a>
+      </div>
     </div>
   )
 }
